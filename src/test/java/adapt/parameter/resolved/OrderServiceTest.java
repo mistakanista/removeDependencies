@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class OrderServiceTest {
+class OrderServiceTest {
     static class DummySender implements MessageSender {
         String lastMessage;
         @Override
