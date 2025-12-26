@@ -9,6 +9,6 @@ public class OrderService {
 
     public void placeOrder(String order) {
         // ... Bestelllogik
-        messageSender.send("Bestellung erhalten: " + order);
+        messageSender.send("Order received: " + order);
     }
 }

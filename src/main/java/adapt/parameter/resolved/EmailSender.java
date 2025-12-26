@@ -8,6 +8,6 @@ public class EmailSender implements MessageSender {
 
     @Override
     public void send(String message) {
-        log.info("E-Mail gesendet: {}", message);
+        log.info("Email sent: {}", message);
     }
 }
