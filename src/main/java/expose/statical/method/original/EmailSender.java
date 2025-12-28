@@ -1,9 +1,9 @@
-package encapsulate.global.reference.original;
-
+package expose.statical.method.original;
 
 public class EmailSender {
 
-    public void send(String message) {
+    // eigentliche Implementierung
+    protected void send(String message) {
         throw new UnsupportedOperationException("external service not implemented");
     }
 }

@@ -10,6 +10,6 @@ public class OrderService {
     private EmailSender emailSender = new EmailSender();
 
     public void placeOrder(String order) {
-        getEmailSender().send(ORDER_PLACED+ order);
+        getEmailSender().send(ORDER_PLACED + order);
     }
 }
