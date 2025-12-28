@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class OrderServiceTest {
 
     @Test
-    void testPlaceOrderSendsMessage() {
+    void testDefinitionCompletion() {
         OrderService orderService = new TestOrderService();
         String testOrder = "Test order";
         String placedOrder = orderService.placeOrder(testOrder);

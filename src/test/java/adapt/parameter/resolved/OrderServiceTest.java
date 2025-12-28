@@ -2,6 +2,7 @@ package adapt.parameter.resolved;
 
 import org.junit.jupiter.api.Test;
 
+import static adapt.parameter.resolved.OrderService.ORDER_RECEIVED;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OrderServiceTest {
@@ -14,12 +15,13 @@ class OrderServiceTest {
     }
 
     @Test
-    void testPlaceOrderSendsMessage() {
+    void testAdaptParameter() {
         DummySender dummySender = new DummySender();
         OrderService service = new OrderService(dummySender);
 
-        service.placeOrder("TestBestellung");
+        String testOrder = "Test order";
+        service.placeOrder(testOrder);
 
-        assertEquals("Bestellung erhalten: TestBestellung", dummySender.lastMessage);
+        assertEquals(ORDER_RECEIVED + testOrder, dummySender.lastMessage);
     }
 }

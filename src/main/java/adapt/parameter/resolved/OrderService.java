@@ -1,6 +1,7 @@
 package adapt.parameter.resolved;
 
 public class OrderService {
+    public static final String ORDER_RECEIVED = "Order received: ";
     private final MessageSender messageSender;
 
     public OrderService(MessageSender messageSender) {
@@ -9,6 +10,6 @@ public class OrderService {
 
     public void placeOrder(String order) {
         // ... Bestelllogik
-        messageSender.send("Order received: " + order);
+        messageSender.send(ORDER_RECEIVED + order);
     }
 }
