@@ -1,7 +1,8 @@
 package encapsulate.global.reference.resolved;
 
-import encapsulate.global.reference.original.EmailSender;
+
 import org.junit.jupiter.api.Test;
+import original.EmailSender;
 
 import static definition.completion.resolved.OrderService.ORDER_PLACED;
 import static org.mockito.Mockito.mock;

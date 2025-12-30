@@ -1,6 +1,6 @@
 package extract.factory.method.resolved;
 
-import extract.factory.method.original.EmailSender;
+import original.EmailSender;
 
 class TestOrderService extends OrderService {
 

@@ -1,6 +1,8 @@
 package extract.override.call.resolved;
 
-import extract.override.call.original.EmailSender;
+
+
+import original.EmailSender;
 
 import static definition.completion.resolved.OrderService.ORDER_PLACED;
 

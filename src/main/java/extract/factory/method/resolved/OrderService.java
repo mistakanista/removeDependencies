@@ -1,6 +1,7 @@
 package extract.factory.method.resolved;
 
-import extract.factory.method.original.EmailSender;
+
+import original.EmailSender;
 
 import static definition.completion.resolved.OrderService.ORDER_PLACED;
 

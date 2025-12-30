@@ -1,7 +1,7 @@
 package encapsulate.global.reference.resolved;
 
-import encapsulate.global.reference.original.EmailSender;
 import lombok.Data;
+import original.EmailSender;
 
 import static definition.completion.resolved.OrderService.ORDER_PLACED;
 
