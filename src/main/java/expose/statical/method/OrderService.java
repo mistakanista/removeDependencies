@@ -1,4 +1,4 @@
-package expose.statical.method.resolved;
+package expose.statical.method;
 
 
 import static definition.completion.resolved.OrderService.ORDER_PLACED;

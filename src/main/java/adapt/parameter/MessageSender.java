@@ -1,4 +1,4 @@
-package adapt.parameter.resolved;
+package adapt.parameter;
 
 public interface MessageSender {
     void send(String message);

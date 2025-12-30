@@ -1,4 +1,4 @@
-package encapsulate.global.reference.resolved;
+package encapsulate.global.reference;
 
 
 import org.junit.jupiter.api.Test;

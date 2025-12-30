@@ -1,15 +1,18 @@
-package encapsulate.global.reference.resolved;
+package extract.override.call;
 
-import lombok.Data;
+
+
 import original.EmailSender;
 
 import static definition.completion.resolved.OrderService.ORDER_PLACED;
 
-@Data
 public class OrderService {
-    private EmailSender emailSender = new EmailSender();
 
     public void placeOrder(String order) {
-        getEmailSender().send(ORDER_PLACED + order);
+        sendEmail(ORDER_PLACED + order);
+    }
+
+    protected void sendEmail(String message) {
+        new EmailSender().send(message);
     }
 }

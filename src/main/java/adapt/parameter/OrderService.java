@@ -1,4 +1,4 @@
-package adapt.parameter.resolved;
+package adapt.parameter;
 
 public class OrderService {
     public static final String ORDER_RECEIVED = "Order received: ";

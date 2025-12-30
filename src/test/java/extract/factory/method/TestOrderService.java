@@ -1,4 +1,4 @@
-package extract.factory.method.resolved;
+package extract.factory.method;
 
 import original.EmailSender;
 

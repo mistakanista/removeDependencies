@@ -1,6 +1,4 @@
-package expose.statical.method.resolved;
-
-
+package extract.override.call;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,19 +8,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class OrderServiceTest {
 
     @Test
-    void testExposeStaticMethod() {
-        FakeEmailSender fakeSender = new FakeEmailSender();
+    void testExtractOverrideCall() {
+        TestOrderService service = new TestOrderService();
 
-        //redirect static method to fake sender
-        EmailSender.setInstance(fakeSender);
-
-        OrderService service = new OrderService();
         String order = "ABC-123";
         service.placeOrder(order);
 
         assertEquals(
                 ORDER_PLACED + order,
-                fakeSender.lastMessage
+                service.lastMessage
         );
     }
 }

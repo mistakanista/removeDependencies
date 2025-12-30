@@ -1,4 +1,4 @@
-package expose.statical.method.resolved;
+package expose.statical.method;
 
 public class EmailSender {
 

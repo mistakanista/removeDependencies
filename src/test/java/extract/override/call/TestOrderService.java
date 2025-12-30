@@ -1,4 +1,4 @@
-package extract.override.call.resolved;
+package extract.override.call;
 
 class TestOrderService extends OrderService {
 

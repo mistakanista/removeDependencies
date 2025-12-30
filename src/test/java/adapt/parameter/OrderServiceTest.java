@@ -1,8 +1,8 @@
-package adapt.parameter.resolved;
+package adapt.parameter;
 
 import org.junit.jupiter.api.Test;
 
-import static adapt.parameter.resolved.OrderService.ORDER_RECEIVED;
+import static adapt.parameter.OrderService.ORDER_RECEIVED;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OrderServiceTest {
