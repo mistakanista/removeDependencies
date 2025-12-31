@@ -1,11 +1,17 @@
-package definition.completion.original;
+package extract.iface;
+
 
 import static original.OrderService.ORDER_PLACED;
 
 public class OrderService {
 
+    private final EmailSender emailSender;
+
+    public OrderService(EmailSender emailSender) {
+        this.emailSender = emailSender;
+    }
+
     public void placeOrder(String order) {
-        EmailSender emailSender = new EmailSender();// ... Bestelllogik
         emailSender.send(ORDER_PLACED + order);
     }
 }

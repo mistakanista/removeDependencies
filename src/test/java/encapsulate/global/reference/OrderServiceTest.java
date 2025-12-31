@@ -4,9 +4,9 @@ package encapsulate.global.reference;
 import org.junit.jupiter.api.Test;
 import original.EmailSender;
 
-import static definition.completion.resolved.OrderService.ORDER_PLACED;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static original.OrderService.ORDER_PLACED;
 
 class OrderServiceTest {
 
@@ -16,7 +16,7 @@ class OrderServiceTest {
 
         OrderService service = new OrderService();
         service.setEmailSender(mockSender);
-        String testOrder = "TestOrder";
+        String testOrder = "encapsulate-123";
         service.placeOrder(testOrder);
 
         verify(mockSender).send(ORDER_PLACED + testOrder);

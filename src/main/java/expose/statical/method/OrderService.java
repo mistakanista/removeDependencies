@@ -1,7 +1,7 @@
 package expose.statical.method;
 
 
-import static definition.completion.resolved.OrderService.ORDER_PLACED;
+import static original.OrderService.ORDER_PLACED;
 
 public class OrderService {
     public void placeOrder(String order) {

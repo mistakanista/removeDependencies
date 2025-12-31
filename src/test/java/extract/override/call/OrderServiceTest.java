@@ -2,8 +2,8 @@ package extract.override.call;
 
 import org.junit.jupiter.api.Test;
 
-import static definition.completion.resolved.OrderService.ORDER_PLACED;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static original.OrderService.ORDER_PLACED;
 
 class OrderServiceTest {
 
@@ -11,7 +11,7 @@ class OrderServiceTest {
     void testExtractOverrideCall() {
         TestOrderService service = new TestOrderService();
 
-        String order = "ABC-123";
+        String order = "override-call-123";
         service.placeOrder(order);
 
         assertEquals(

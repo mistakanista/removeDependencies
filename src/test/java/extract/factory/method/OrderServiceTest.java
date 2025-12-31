@@ -3,8 +3,8 @@ package extract.factory.method;
 
 import org.junit.jupiter.api.Test;
 
-import static definition.completion.resolved.OrderService.ORDER_PLACED;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static original.OrderService.ORDER_PLACED;
 
 class OrderServiceTest {
 
@@ -12,7 +12,7 @@ class OrderServiceTest {
     void testFactoryMethod() {
         TestOrderService service = new TestOrderService();
 
-        String order = "ABC-124";
+        String order = "factory-123";
         service.placeOrder(order);
 
         assertEquals(

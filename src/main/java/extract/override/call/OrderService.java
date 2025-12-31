@@ -4,7 +4,8 @@ package extract.override.call;
 
 import original.EmailSender;
 
-import static definition.completion.resolved.OrderService.ORDER_PLACED;
+import static original.OrderService.ORDER_PLACED;
+
 
 public class OrderService {
 

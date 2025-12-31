@@ -2,10 +2,10 @@ package definition.completion.resolved;
 
 import definition.completion.original.EmailSender;
 
+import static original.OrderService.ORDER_PLACED;
+
 public class OrderService {
 
-
-    public static final String ORDER_PLACED = "Order placed: ";
 
     public String placeOrder(String order) {
         EmailSender emailSender = createEmailSender();

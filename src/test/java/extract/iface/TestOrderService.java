@@ -1,23 +1,19 @@
-package expose.statical.method;
-
+package extract.iface;
 
 
 import org.junit.jupiter.api.Test;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
-class OrderServiceTest {
-
+class TestOrderService {
     @Test
-    void testExposeStaticMethod() {
+    void testExtractInterface() {
         FakeEmailSender fakeSender = new FakeEmailSender();
+        OrderService service = new OrderService(fakeSender);
 
-        //redirect static method to fake sender
-        EmailSender.setInstance(fakeSender);
-
-        OrderService service = new OrderService();
-        String order = "expose-123";
+        String order = "Interface-123";
         service.placeOrder(order);
 
         assertEquals(

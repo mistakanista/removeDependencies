@@ -1,6 +1,7 @@
 package extract.implementer;
 
-import static definition.completion.resolved.OrderService.ORDER_PLACED;
+
+import static original.OrderService.ORDER_PLACED;
 
 public class OrderService {
     private final MailSender mailSender;
