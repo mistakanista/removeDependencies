@@ -1,17 +1,17 @@
-package extract.override.call;
+package introduce.instance.delegator;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
-class OrderServiceTest {
+class IntroduceInstanceDelegatorTest {
 
     @Test
-    void testExtractOverrideCall() {
+    void testPlaceOrderSendsEmail() {
         TestOrderService service = new TestOrderService();
 
-        String order = "override-call-123";
+        String order = "introduce-instance-delegator-123";
         service.placeOrder(order);
 
         assertEquals(

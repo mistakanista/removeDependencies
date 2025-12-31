@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
-class OrderServiceTest {
+class AdaptParameterTest {
     static class DummySender implements MessageSender {
         String lastMessage;
         @Override

@@ -8,7 +8,7 @@ import original.EmailSender;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
-class OrderServiceTest {
+class IntroduceStaticSetterTest {
 
     private static String lastMessage;
 

@@ -1,19 +1,18 @@
-package extract.iface;
-
+package extract.implementer;
 
 import org.junit.jupiter.api.Test;
-
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
-class TestOrderService {
+class ExtractImplementerTest {
+
     @Test
-    void testExtractInterface() {
-        FakeEmailSender fakeSender = new FakeEmailSender();
+    void testExtractImplementer() {
+        FakeMailSender fakeSender = new FakeMailSender();
         OrderService service = new OrderService(fakeSender);
 
-        String order = "Interface-123";
+        String order = "Implementer-123";
         service.placeOrder(order);
 
         assertEquals(

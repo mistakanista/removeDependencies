@@ -1,4 +1,4 @@
-package parameterize.constructor.resolved;
+package link.substitution;
 
 import org.junit.jupiter.api.Test;
 import original.EmailSender;
@@ -6,22 +6,21 @@ import original.EmailSender;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
-class OrderServiceTest {
-
+class LinkSubstitutionTest {
     private String lastMessage;
 
     @Test
-    void testParameterizeConstructor() {
-        EmailSender testSender = new EmailSender() {
+    void testLinkSubstitution() {
+        OrderService service = new OrderService();
+
+        // Link Substitution
+        service.emailSender = new EmailSender() {
             @Override
             public void send(String message) {
                 lastMessage = message;
             }
         };
-
-        OrderService service = new OrderService(testSender);
-
-        String order = "parameterize-constructor-123";
+        String order = "link-substitution-123";
         service.placeOrder(order);
 
         assertEquals(ORDER_PLACED + order, lastMessage);

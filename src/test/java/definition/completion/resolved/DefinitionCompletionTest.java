@@ -7,7 +7,7 @@ import static definition.completion.resolved.TestOrderService.TEST_E_MAIL_GESEND
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
-class OrderServiceTest {
+class DefinitionCompletionTest {
 
     @Test
     void testDefinitionCompletion() {

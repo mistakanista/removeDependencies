@@ -1,17 +1,18 @@
-package introduce.instance.delegator;
+package extract.factory.method;
+
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
-class OrderServiceTest {
+class ExtractFactoryMethodTest {
 
     @Test
-    void testPlaceOrderSendsEmail() {
+    void testFactoryMethod() {
         TestOrderService service = new TestOrderService();
 
-        String order = "introduce-instance-delegator-123";
+        String order = "factory-123";
         service.placeOrder(order);
 
         assertEquals(

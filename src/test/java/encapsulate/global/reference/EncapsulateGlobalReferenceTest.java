@@ -8,7 +8,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static original.OrderService.ORDER_PLACED;
 
-class OrderServiceTest {
+class EncapsulateGlobalReferenceTest {
 
     @Test
     void testEncapsulateGlobalReference() {

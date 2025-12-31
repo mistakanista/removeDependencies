@@ -6,7 +6,7 @@ import static extract.override.getter.resolved.TestOrderService.TEST_USER;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
-class OrderServiceTest {
+class ExtractGetterTest {
 
     @Test
     void testExtractOverrideGetter() {
