@@ -1,7 +1,8 @@
-package parameterize.constructor.resolved;
+package parameterize.method;
 
 import org.junit.jupiter.api.Test;
 import original.EmailSender;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
@@ -11,7 +12,7 @@ class OrderServiceTest {
     private String lastMessage;
 
     @Test
-    void testParameterizeConstructor() {
+    void testParameterizeMethod() {
         EmailSender testSender = new EmailSender() {
             @Override
             public void send(String message) {
@@ -19,10 +20,10 @@ class OrderServiceTest {
             }
         };
 
-        OrderService service = new OrderService(testSender);
+        OrderService service = new OrderService();
 
-        String order = "parameterize-constructor-123";
-        service.placeOrder(order);
+        String order = "parameterize-method-123";
+        service.placeOrder(order, testSender);
 
         assertEquals(ORDER_PLACED + order, lastMessage);
     }
