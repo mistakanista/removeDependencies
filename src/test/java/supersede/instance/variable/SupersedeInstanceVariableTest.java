@@ -1,16 +1,17 @@
-package subclass.override.method;
+package supersede.instance.variable;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
-class SubclassOverrideMethodTest {
+class SupersedeInstanceVariableTest {
+
     @Test
-    void testSubclassOverrideMethod() {
+    void testSupersedeInstanceVariable() {
         TestOrderService service = new TestOrderService();
 
-        String order = "subclass-override-method-123";
+        String order = "supersede-instance-variable-123";
         service.placeOrder(order);
 
         assertEquals(
