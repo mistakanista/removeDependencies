@@ -4,7 +4,7 @@
 flowchart TD
     A[Dependency causes test pain] --> B{Can you change the code?}
 
-    B -->|No| Z[Textual Redefinition (last resort)]
+    B -->|No| Z[Textual Redefinition as last resort]
 
     B -->|Yes| C{Is dependency created with new?}
 
