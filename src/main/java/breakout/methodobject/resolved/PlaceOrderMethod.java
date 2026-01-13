@@ -27,6 +27,7 @@ public class PlaceOrderMethod {
     }
 
     protected EmailSender createEmailSender() {
+
         return new EmailSender();
     }
 }
