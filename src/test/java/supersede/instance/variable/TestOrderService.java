@@ -6,7 +6,7 @@ public class TestOrderService extends OrderService{
     String lastMessage;
 
     TestOrderService() {
-        //bsupersede instance variable
+        //supersede instance variable
         this.emailSender = new EmailSender() {
             @Override
             public void send(String message) {
