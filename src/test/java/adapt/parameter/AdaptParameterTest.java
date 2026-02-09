@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
 class AdaptParameterTest {
-    static class DummySender implements MessageSender {
+    static class AdaptConstructorSender implements MessageSender {
         String lastMessage;
         @Override
         public void send(String message) {
@@ -15,7 +15,7 @@ class AdaptParameterTest {
         }
     }
 
-    static class FakeSender extends EmailSender {
+    static class AdaptMethodSender extends EmailSender {
         String lastMessage;
         @Override
         public void send(String message) {
@@ -25,26 +25,26 @@ class AdaptParameterTest {
 
     @Test
     void testAdaptParameterConstructorParameter() {
-        DummySender dummySender = new DummySender();
-        OrderService service = new OrderService(dummySender);
+        AdaptConstructorSender adaptConstructorSender = new AdaptConstructorSender();
+        OrderService service = new OrderService(adaptConstructorSender);
 
         String testOrder = "adapt-constructor-123";
         service.placeOrder(testOrder);
 
-        assertEquals(ORDER_PLACED + testOrder, dummySender.lastMessage);
+        assertEquals(ORDER_PLACED + testOrder, adaptConstructorSender.lastMessage);
 
     }
 
     @Test
     void testAdaptParameterMethodParameter() {
 
-        FakeSender fakeSender = new FakeSender();
+        AdaptMethodSender adaptMethodSender = new AdaptMethodSender();
 
         OrderService service = new OrderService();
         String testOrder = "adapt-method-123";
-        service.placeOrder(testOrder, fakeSender);
+        service.placeOrder(testOrder, adaptMethodSender);
 
-        assertEquals(ORDER_PLACED + testOrder, fakeSender.lastMessage);
+        assertEquals(ORDER_PLACED + testOrder, adaptMethodSender.lastMessage);
 
     }
 }
