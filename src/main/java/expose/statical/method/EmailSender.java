@@ -10,12 +10,12 @@ public class EmailSender {
         instance.send(message);
     }
 
-    // Austauschpunkt für Tests
+    // exchange point for Tests
     static void setInstance(EmailSender sender) {
         instance = sender;
     }
 
-    // eigentliche Implementierung
+    // implementation
     protected void send(String message) {
         throw new UnsupportedOperationException("external service not implemented");
     }
