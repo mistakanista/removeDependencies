@@ -1,4 +1,4 @@
-package expose.statical.method;
+package expose.statical.method.resolved;
 
 public class FakeEmailSender extends EmailSender {
 

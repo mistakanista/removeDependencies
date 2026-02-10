@@ -1,6 +1,8 @@
 package expose.statical.method;
 
 
+import expose.statical.method.resolved.EmailSender;
+
 import static original.OrderService.ORDER_PLACED;
 
 public class OrderService {

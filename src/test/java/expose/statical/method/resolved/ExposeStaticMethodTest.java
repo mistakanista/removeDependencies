@@ -1,7 +1,8 @@
-package expose.statical.method;
+package expose.statical.method.resolved;
 
 
 
+import expose.statical.method.OrderService;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
