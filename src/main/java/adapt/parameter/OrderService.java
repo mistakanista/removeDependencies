@@ -5,18 +5,17 @@ import original.EmailSender;
 import static original.OrderService.ORDER_PLACED;
 
 public class OrderService {
-    private MessageSender messageSender;
+    private EmailSender emailSender;
 
-    public OrderService(MessageSender messageSender) {
-        this.messageSender = messageSender;
+    public OrderService(EmailSender emailSender) {
+        this.emailSender = emailSender;
     }
 
     public OrderService() {
     }
 
     public void placeOrder(String order) {
-        // ... Bestelllogik
-        messageSender.send(ORDER_PLACED + order);
+        emailSender.send(ORDER_PLACED + order);
     }
 
     public void placeOrder(String order, EmailSender sender) {

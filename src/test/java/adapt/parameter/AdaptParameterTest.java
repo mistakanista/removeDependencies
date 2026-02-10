@@ -7,15 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
 class AdaptParameterTest {
-    static class AdaptConstructorSender implements MessageSender {
-        String lastMessage;
-        @Override
-        public void send(String message) {
-            lastMessage = message;
-        }
-    }
-
-    static class AdaptMethodSender extends EmailSender {
+    static class TestSender extends EmailSender {
         String lastMessage;
         @Override
         public void send(String message) {
@@ -25,26 +17,26 @@ class AdaptParameterTest {
 
     @Test
     void testAdaptParameterConstructorParameter() {
-        AdaptConstructorSender adaptConstructorSender = new AdaptConstructorSender();
-        OrderService service = new OrderService(adaptConstructorSender);
+        TestSender testSender = new TestSender();
+        OrderService service = new OrderService(testSender);
 
         String testOrder = "adapt-constructor-123";
         service.placeOrder(testOrder);
 
-        assertEquals(ORDER_PLACED + testOrder, adaptConstructorSender.lastMessage);
+        assertEquals(ORDER_PLACED + testOrder, testSender.lastMessage);
 
     }
 
     @Test
     void testAdaptParameterMethodParameter() {
 
-        AdaptMethodSender adaptMethodSender = new AdaptMethodSender();
+        TestSender testSender = new TestSender();
 
         OrderService service = new OrderService();
         String testOrder = "adapt-method-123";
-        service.placeOrder(testOrder, adaptMethodSender);
+        service.placeOrder(testOrder, testSender);
 
-        assertEquals(ORDER_PLACED + testOrder, adaptMethodSender.lastMessage);
+        assertEquals(ORDER_PLACED + testOrder, testSender.lastMessage);
 
     }
 }
