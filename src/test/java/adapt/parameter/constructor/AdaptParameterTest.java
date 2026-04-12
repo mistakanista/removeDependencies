@@ -1,4 +1,5 @@
-package adapt.parameter;
+package adapt.parameter.constructor;
+
 
 import org.junit.jupiter.api.Test;
 import original.EmailSender;
@@ -22,19 +23,6 @@ class AdaptParameterTest {
 
         String testOrder = "adapt-constructor-123";
         service.placeOrder(testOrder);
-
-        assertEquals(ORDER_PLACED + testOrder, testSender.lastMessage);
-
-    }
-
-    @Test
-    void testAdaptParameterMethodParameter() {
-
-        TestSender testSender = new TestSender();
-
-        OrderService service = new OrderService();
-        String testOrder = "adapt-method-123";
-        service.placeOrder(testOrder, testSender);
 
         assertEquals(ORDER_PLACED + testOrder, testSender.lastMessage);
 
