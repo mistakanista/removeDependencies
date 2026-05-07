@@ -1,4 +1,4 @@
-package pushdown.dependency.resolved.dependency.original;
+package pushdown.dependency.original;
 
 import original.EmailSender;
 

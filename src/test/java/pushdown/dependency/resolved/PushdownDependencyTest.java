@@ -1,12 +1,12 @@
 package pushdown.dependency.resolved;
 
 import org.junit.jupiter.api.Test;
-import pushdown.dependency.resolved.dependency.original.InStoreOrderService;
-import pushdown.dependency.resolved.dependency.original.OrderService;
+import pushdown.dependency.original.InStoreOrderService;
+import pushdown.dependency.original.OrderService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
-import static pushdown.dependency.resolved.dependency.original.InStoreOrderService.IN_STORE;
+import static pushdown.dependency.original.InStoreOrderService.IN_STORE;
 
 class PushdownDependencyTest {
 
