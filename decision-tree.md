@@ -32,8 +32,7 @@ flowchart TD
     M -->|Yes| N1[Extract & Override Call]
     N1 --> N[Template Redefinition or Break Out Method Object]
     M -->|No| O{Is logic tied to a concrete class?}
-
-    O -->|Yes| P[Extract Interface or Extract Implementer]
-    O --> P1[Pull Up Feature]
-    O --> P2[Push Down Dependency]
+    O -->|Shared behavior| P1[Pull Up Feature]
+    O -->|Dependency only needed in subclass| P2[Push Down Dependency]
+    O -->|Need abstraction| P3[Extract Interface / Extract Implementer]
     O -->|No| Q[Subclass and Override Method]
