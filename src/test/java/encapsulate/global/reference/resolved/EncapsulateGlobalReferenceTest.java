@@ -9,10 +9,10 @@ import static original.OrderService.ORDER_PLACED;
 class EncapsulateGlobalReferenceTest {
 
     @Test
-    void testEncapsulateGlobalReferencesWithoutMockito() {
+    void testEncapsulateGlobalReferences() {
         TestOrderService service = new TestOrderService();
 
-        String testOrder = "encapsulate-wihtout-mockito-123";
+        String testOrder = "encapsulate-global-reference-123";
         service.placeOrder(testOrder);
 
         assertEquals(ORDER_PLACED + testOrder, service.lastMessage);
