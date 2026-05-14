@@ -6,12 +6,22 @@ import original.EmailSender;
 import static original.OrderService.ORDER_PLACED;
 
 public class OrderService {
-    public void placeOrder(String order) {
-        EmailSender emailSender = createEmailSender();
-        emailSender.send(ORDER_PLACED + order);
+
+    private final EmailSenderFactory factory;
+
+    public OrderService(
+            EmailSenderFactory factory) {
+
+        this.factory = factory;
     }
 
-    protected EmailSender createEmailSender() {
-        return new EmailSender();
+    public void placeOrder(String order) {
+
+        EmailSender emailSender =
+                factory.create();
+
+        emailSender.send(
+                ORDER_PLACED + order
+        );
     }
 }
