@@ -1,22 +1,23 @@
 package breakout.methodobject.resolved;
 
 import org.junit.jupiter.api.Test;
+import original.EmailSender;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 class BreakoutMethodObjectTest {
 
     @Test
-    void testBreakoutMethodObject() {
-        String order = "breakout-methodobject-123";
-        TestPlaceOrderMethod method =
-                new TestPlaceOrderMethod(order, "test@example.com");
+    void testBreakoutMethodObjectMockito() {
+        EmailSender mockSender = mock(EmailSender.class);
+        String order = "breakout-methodobject-123-mockito";
+        String email = "test@example.com";
+        PlaceOrderMethod method =
+                new PlaceOrderMethod(order, email, mockSender);
 
         method.execute();
 
-        assertEquals(
-                "Order " + order + " for customer test@example.com",
-                method.lastMessage
-        );
+        verify(mockSender).send("Order " + order + " for customer " + email);
     }
 }

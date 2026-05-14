@@ -3,28 +3,22 @@ package adapt.parameter.method;
 import org.junit.jupiter.api.Test;
 import original.EmailSender;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static original.OrderService.ORDER_PLACED;
 
 class AdaptParameterTest {
-    static class TestSender extends EmailSender {
-        String lastMessage;
-        @Override
-        public void send(String message) {
-            lastMessage = message;
-        }
-    }
+
 
     @Test
-    void testAdaptParameterMethodParameter() {
+    void testAdaptParameterMethodParameterMockito() {
 
-        TestSender testSender = new TestSender();
-
+        EmailSender mockSender = mock(EmailSender.class);
         OrderService service = new OrderService();
-        String testOrder = "adapt-method-123";
-        service.placeOrder(testOrder, testSender);
 
-        assertEquals(ORDER_PLACED + testOrder, testSender.lastMessage);
+        String testOrder = "adapt-method-123-mock";
+        service.placeOrder(testOrder, mockSender);
 
+        verify(mockSender).send(ORDER_PLACED + testOrder);
     }
 }

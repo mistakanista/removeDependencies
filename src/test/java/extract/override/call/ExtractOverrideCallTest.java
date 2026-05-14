@@ -1,22 +1,24 @@
 package extract.override.call;
 
 import org.junit.jupiter.api.Test;
+import original.EmailSender;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static original.OrderService.ORDER_PLACED;
 
 class ExtractOverrideCallTest {
 
+
     @Test
-    void testExtractOverrideCall() {
-        TestOrderService service = new TestOrderService();
+    void testExtractOverrideCallMockito() {
 
-        String order = "override-call-123";
-        service.placeOrder(order);
+        EmailSender mockSender = mock(EmailSender.class);
+        OrderService service = new OrderService(mockSender);
 
-        assertEquals(
-                ORDER_PLACED + order,
-                service.lastMessage
-        );
+        String testOrder = "override-call-123-mockito";
+        service.placeOrder(testOrder);
+
+        verify(mockSender).send(ORDER_PLACED + testOrder);
     }
 }

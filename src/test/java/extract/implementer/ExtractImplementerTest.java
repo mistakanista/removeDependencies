@@ -1,23 +1,23 @@
 package extract.implementer;
 
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static original.OrderService.ORDER_PLACED;
 
 class ExtractImplementerTest {
 
     @Test
-    void testExtractImplementer() {
-        FakeMailSender fakeSender = new FakeMailSender();
-        OrderService service = new OrderService(fakeSender);
+    void testExtractInterfaceMockito() {
 
-        String order = "Implementer-123";
-        service.placeOrder(order);
+        MailSender mockSender = mock(MailSender.class);
+        OrderService service = new OrderService(mockSender);
 
-        assertEquals(
-                ORDER_PLACED + order,
-                fakeSender.lastMessage
-        );
+        String testOrder = "Implementer-123-mockito";
+        service.placeOrder(testOrder);
+
+        verify(mockSender).send(ORDER_PLACED + testOrder);
     }
 }

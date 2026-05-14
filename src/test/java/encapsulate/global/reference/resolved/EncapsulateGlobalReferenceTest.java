@@ -1,20 +1,25 @@
 package encapsulate.global.reference.resolved;
 
 
+import encapsulate.global.reference.OrderService;
 import org.junit.jupiter.api.Test;
+import original.EmailSender;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static original.OrderService.ORDER_PLACED;
 
 class EncapsulateGlobalReferenceTest {
 
     @Test
-    void testEncapsulateGlobalReferencesWithoutMockito() {
-        TestOrderService service = new TestOrderService();
+    void testEncapsulateGlobalReference() {
+        EmailSender mockSender = mock(EmailSender.class);
 
-        String testOrder = "encapsulate-wihtout-mockito-123";
+        encapsulate.global.reference.OrderService service = new OrderService();
+        service.setEmailSender(mockSender);
+        String testOrder = "encapsulate-123";
         service.placeOrder(testOrder);
 
-        assertEquals(ORDER_PLACED + testOrder, service.lastMessage);
+        verify(mockSender).send(ORDER_PLACED + testOrder);
     }
 }
