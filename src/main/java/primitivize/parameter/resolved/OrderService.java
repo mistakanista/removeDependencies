@@ -5,6 +5,7 @@ import primitivize.parameter.original.Order;
 
 public class OrderService {
     public void placeOrder(Order order) {
+
         sendConfirmation(order.getId(), order.getCustomerEmail());
     }
 

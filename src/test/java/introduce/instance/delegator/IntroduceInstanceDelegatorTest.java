@@ -1,22 +1,23 @@
 package introduce.instance.delegator;
 
 import org.junit.jupiter.api.Test;
+import original.EmailSender;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 import static original.OrderService.ORDER_PLACED;
 
 class IntroduceInstanceDelegatorTest {
 
     @Test
-    void testPlaceOrderSendsEmail() {
-        TestOrderService service = new TestOrderService();
+    void testDefinitionCompletionMockito() {
+        EmailSender mockSender = mock(EmailSender.class);
+        OrderService orderService = new OrderService();
+        orderService.setEmailSender(mockSender);
 
-        String order = "introduce-instance-delegator-123";
-        service.placeOrder(order);
+        String testOrder = "introduce-instance-delegator-123-mockito";
+        orderService.placeOrder(testOrder);
 
-        assertEquals(
-                ORDER_PLACED + order,
-                service.lastMessage
-        );
+        verify(mockSender).send(ORDER_PLACED + testOrder);
+
     }
 }

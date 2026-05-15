@@ -8,18 +8,29 @@ import static original.OrderService.ORDER_PLACED;
 
 public class OrderService {
 
-    private Consumer<String> sendEmail = this::realSendEmail;
+    private final Consumer<String> sendEmail;
+
+    public OrderService() {
+        this.sendEmail = this::realSendEmail;
+    }
+
+    // constructor for tests
+    public OrderService(
+            Consumer<String> sendEmail) {
+
+        this.sendEmail = sendEmail;
+    }
 
     public void placeOrder(String order) {
-        sendEmail.accept(ORDER_PLACED + order);
+
+        sendEmail.accept(
+                ORDER_PLACED + order
+        );
     }
 
-    private void realSendEmail(String message) {
+    private void realSendEmail(
+            String message) {
+
         new EmailSender().send(message);
-    }
-
-    // exchangeable behavior for testing
-    protected void setSendEmail(Consumer<String> sendEmail) {
-        this.sendEmail = sendEmail;
     }
 }

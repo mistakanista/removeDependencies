@@ -1,25 +1,31 @@
 package pullup.feature.resolved;
 
 import org.junit.jupiter.api.Test;
-
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doNothing;
 import static original.OrderService.ORDER_PLACED;
 import static pullup.feature.resolved.OnlineOrderService.ONLINE;
 
 class PullupFeatureTest {
 
-
     @Test
-    void testPullupFeature() {
-        TestOrderService service = new TestOrderService();
+    void testPullupFeatureMockito() {
+        OnlineOrderService service =
+                spy(new OnlineOrderService());
 
-        String order = "pullup-feature-123";
+        doNothing()
+                .when(service)
+                .sendEmail(
+                        anyString()
+                );
+        String order = "pullup-feature-123-mockito";
+
         service.placeOrder(order);
 
-        assertEquals(
-                ONLINE + ORDER_PLACED + order,
-                service.lastMessage
-        );
+        verify(service)
+                .sendEmail(
+                        ONLINE + ORDER_PLACED + order
+                );
     }
 }

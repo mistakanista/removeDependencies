@@ -1,30 +1,36 @@
 package primitivize.parameter.resolved;
 
 import org.junit.jupiter.api.Test;
+
 import primitivize.parameter.original.Order;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
 class PrimitivizeParameterTest {
 
-    private String lastMessage;
-
     @Test
-    void testSendConfirmation() {
-        OrderService service = new OrderService() {
-            @Override
-            protected void sendConfirmation(String orderId, String email) {
-                lastMessage = "Order " + orderId + " for customer " + email;
-            }
-        };
+    void primitivizeParameterMockito() {
 
+        OrderService service =
+                spy(new OrderService());
+
+        doNothing()
+                .when(service)
+                .sendConfirmation(
+                        anyString(),
+                        anyString()
+                );
         String email = "test@example.com";
-        String order = "primitivize-parameter-123";
-        service.placeOrder(new Order(order, email));
+        String message = "primitivize-parameter-123-mockito";
+        Order order =
+                new Order(message, email);
 
-        assertEquals(
-                "Order " + order + " for customer " + email,
-                lastMessage
-        );
+        service.placeOrder(order);
+
+        verify(service)
+                .sendConfirmation(
+                        message,
+                        email
+                );
     }
 }

@@ -3,27 +3,20 @@ package parameterize.constructor.resolved;
 import org.junit.jupiter.api.Test;
 import original.EmailSender;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static original.OrderService.ORDER_PLACED;
 
 class ParameterizeConstructorTest {
 
-    private String lastMessage;
-
     @Test
-    void testParameterizeConstructor() {
-        EmailSender testSender = new EmailSender() {
-            @Override
-            public void send(String message) {
-                lastMessage = message;
-            }
-        };
+    void testParameterizeConstructorMockito() {
+        EmailSender mockSender = mock(EmailSender.class);
+        OrderService service = new OrderService(mockSender);
 
-        OrderService service = new OrderService(testSender);
-
-        String order = "parameterize-constructor-123";
+        String order = "parameterize-constructor-123-mockito";
         service.placeOrder(order);
 
-        assertEquals(ORDER_PLACED + order, lastMessage);
+        verify(mockSender).send(ORDER_PLACED + order);
     }
 }
