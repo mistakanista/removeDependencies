@@ -1,22 +1,27 @@
 package replace.global.reference.resolved;
 
 import org.junit.jupiter.api.Test;
+import original.EmailSender;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 import static original.OrderService.ORDER_PLACED;
 
 class ReplaceGlobalReferenceTest {
 
     @Test
-    void testReplaceGlobalReference() {
-        TestOrderService service = new TestOrderService();
+    void testReplaceGlobalReferenceMockito() {
+        EmailSender mockSender = mock(EmailSender.class);
+        OrderService service =
+                spy(new OrderService());
 
-        String order = "replace-global-reference-123";
+        doReturn(mockSender)
+                .when(service)
+                .getEmailSender();
+        String order = "replace-global-reference-123-mockito";
+
         service.placeOrder(order);
 
-        assertEquals(
-                ORDER_PLACED + order,
-                service.lastMessage
-        );
+        verify(mockSender)
+                .send(ORDER_PLACED + order);
     }
 }

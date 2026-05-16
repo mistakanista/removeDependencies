@@ -2,20 +2,28 @@ package subclass.override.method;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
 import static original.OrderService.ORDER_PLACED;
 
 class SubclassOverrideMethodTest {
-    @Test
-    void testSubclassOverrideMethod() {
-        TestOrderService service = new TestOrderService();
 
-        String order = "subclass-override-method-123";
+    @Test
+    void testSubclassOverrideMethodMockito() {
+
+        OrderService service =
+                spy(new OrderService());
+
+        doNothing()
+                .when(service)
+                .sendEmail(
+                        anyString()
+                );
+        String order = "subclass-override-method-123-mockito";
+
         service.placeOrder(order);
 
-        assertEquals(
-                ORDER_PLACED + order,
-                service.lastMessage
-        );
+        verify(service)
+                .sendEmail(ORDER_PLACED + order);
     }
 }
