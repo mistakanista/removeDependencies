@@ -11,8 +11,7 @@ class PrimitivizeParameterTest {
     @Test
     void primitivizeParameterMockito() {
 
-        OrderService service =
-                spy(new OrderService());
+        OrderService service = spy(new OrderService());
 
         doNothing()
                 .when(service)
@@ -22,8 +21,7 @@ class PrimitivizeParameterTest {
                 );
         String email = "test@example.com";
         String message = "primitivize-parameter-123-mockito";
-        Order order =
-                new Order(message, email);
+        Order order = new Order(message, email);
 
         service.placeOrder(order);
 

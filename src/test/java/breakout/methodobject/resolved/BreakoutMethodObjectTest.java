@@ -9,7 +9,7 @@ import static org.mockito.Mockito.verify;
 class BreakoutMethodObjectTest {
 
     @Test
-    void testBreakoutMethodObjectMockito() {
+    void breakoutMethodObjectMockito() {
         EmailSender mockSender = mock(EmailSender.class);
         String order = "breakout-methodobject-123-mockito";
         String email = "test@example.com";

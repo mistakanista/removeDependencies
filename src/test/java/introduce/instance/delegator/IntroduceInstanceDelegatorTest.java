@@ -9,7 +9,7 @@ import static original.OrderService.ORDER_PLACED;
 class IntroduceInstanceDelegatorTest {
 
     @Test
-    void testDefinitionCompletionMockito() {
+    void introduceInstanceDelegatorMockito() {
         EmailSender mockSender = mock(EmailSender.class);
         OrderService orderService = new OrderService();
         orderService.setEmailSender(mockSender);

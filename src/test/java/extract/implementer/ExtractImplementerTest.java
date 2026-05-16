@@ -10,7 +10,7 @@ import static original.OrderService.ORDER_PLACED;
 class ExtractImplementerTest {
 
     @Test
-    void testExtractInterfaceMockito() {
+    void extractInterfaceMockito() {
 
         MailSender mockSender = mock(MailSender.class);
         OrderService service = new OrderService(mockSender);

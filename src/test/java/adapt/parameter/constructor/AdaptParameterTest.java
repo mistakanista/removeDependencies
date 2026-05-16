@@ -11,7 +11,7 @@ import static original.OrderService.ORDER_PLACED;
 class AdaptParameterTest {
 
     @Test
-    void testAdaptParameterConstructorParameterMockito() {
+    void adaptParameterConstructorParameterMockito() {
 
         EmailSender mockSender = mock(EmailSender.class);
         OrderService service = new OrderService(mockSender);

@@ -10,7 +10,7 @@ import static original.OrderService.ORDER_PLACED;
 class LinkSubstitutionTest {
 
     @Test
-    void testLinkSubstitutionMockito() {
+    void linkSubstitutionMockito() {
         EmailSender mockSender = mock(EmailSender.class);
         OrderService service = new OrderService();
 

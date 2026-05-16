@@ -12,7 +12,7 @@ import static original.OrderService.ORDER_PLACED;
 class EncapsulateGlobalReferenceTest {
 
     @Test
-    void testEncapsulateGlobalReference() {
+    void encapsulateGlobalReference() {
         EmailSender mockSender = mock(EmailSender.class);
 
         encapsulate.global.reference.OrderService service = new OrderService();

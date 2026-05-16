@@ -9,10 +9,9 @@ import static original.OrderService.ORDER_PLACED;
 class SubclassOverrideMethodTest {
 
     @Test
-    void testSubclassOverrideMethodMockito() {
+    void subclassOverrideMethodMockito() {
 
-        OrderService service =
-                spy(new OrderService());
+        OrderService service = spy(new OrderService());
 
         doNothing()
                 .when(service)
@@ -23,7 +22,6 @@ class SubclassOverrideMethodTest {
 
         service.placeOrder(order);
 
-        verify(service)
-                .sendEmail(ORDER_PLACED + order);
+        verify(service).sendEmail(ORDER_PLACED + order);
     }
 }

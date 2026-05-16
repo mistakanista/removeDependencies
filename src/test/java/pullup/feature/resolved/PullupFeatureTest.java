@@ -10,22 +10,17 @@ import static pullup.feature.resolved.OnlineOrderService.ONLINE;
 class PullupFeatureTest {
 
     @Test
-    void testPullupFeatureMockito() {
-        OnlineOrderService service =
-                spy(new OnlineOrderService());
+    void pullupFeatureMockito() {
+        OnlineOrderService service = spy(new OnlineOrderService());
 
         doNothing()
                 .when(service)
-                .sendEmail(
-                        anyString()
-                );
+                .sendEmail(anyString());
+
         String order = "pullup-feature-123-mockito";
 
         service.placeOrder(order);
 
-        verify(service)
-                .sendEmail(
-                        ONLINE + ORDER_PLACED + order
-                );
+        verify(service).sendEmail(ONLINE + ORDER_PLACED + order);
     }
 }

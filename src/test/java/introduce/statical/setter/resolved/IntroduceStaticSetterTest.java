@@ -10,7 +10,7 @@ import static original.OrderService.ORDER_PLACED;
 class IntroduceStaticSetterTest {
 
     @Test
-    void testDefinitionCompletionMockito() {
+    void testIntroduceStaticSetterMockito() {
         EmailSender mockSender = mock(EmailSender.class);
         OrderService orderService = new OrderService();
         OrderService.setEmailSender(mockSender);

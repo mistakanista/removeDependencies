@@ -14,16 +14,14 @@ class ExtractGetterTest {
     @Test
     void extractOverrideGetterMockito() {
 
-        OrderService service =
-                spy(new OrderService());
+        OrderService service = spy(new OrderService());
         String order = "override-getter-123-mockito";
 
         doReturn(TEST_USER)
                 .when(service)
                 .getSystemUser();
 
-        String result =
-                service.createAuditMessage(order);
+        String result = service.createAuditMessage(order);
 
         assertEquals(
                 TEST_USER + ORDER_PLACED + order,

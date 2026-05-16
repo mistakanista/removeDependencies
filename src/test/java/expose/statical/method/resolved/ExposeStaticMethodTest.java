@@ -11,7 +11,7 @@ import static original.OrderService.ORDER_PLACED;
 class ExposeStaticMethodTest {
 
     @Test
-    void testExposeStaticMethodMockito() {
+    void exposeStaticMethodMockito() {
         EmailSender mockSender = mock(EmailSender.class);
         EmailSender.setInstance(mockSender);
 

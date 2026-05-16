@@ -11,7 +11,7 @@ class AdaptParameterTest {
 
 
     @Test
-    void testAdaptParameterMethodParameterMockito() {
+    void adaptParameterMethodParameterMockito() {
 
         EmailSender mockSender = mock(EmailSender.class);
         OrderService service = new OrderService();

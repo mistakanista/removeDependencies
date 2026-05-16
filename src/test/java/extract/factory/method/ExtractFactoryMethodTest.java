@@ -10,22 +10,18 @@ import static original.OrderService.ORDER_PLACED;
 class ExtractFactoryMethodTest {
 
     @Test
-    void testFactoryMethod() {
+    void factoryMethod() {
 
-        EmailSender sender =
-                mock(EmailSender.class);
+        EmailSender sender = mock(EmailSender.class);
 
-        EmailSenderFactory factory =
-                mock(EmailSenderFactory.class);
+        EmailSenderFactory factory = mock(EmailSenderFactory.class);
 
-        when(factory.create())
-                .thenReturn(sender);
+        when(factory.create()).thenReturn(sender);
 
         OrderService service = new OrderService(factory);
         String order = "factory-123-mockito";
         service.placeOrder(order);
 
-        verify(sender)
-                .send(ORDER_PLACED + order);
+        verify(sender).send(ORDER_PLACED + order);
     }
 }

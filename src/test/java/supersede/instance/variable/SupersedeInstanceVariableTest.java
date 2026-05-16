@@ -9,13 +9,11 @@ import static original.OrderService.ORDER_PLACED;
 class SupersedeInstanceVariableTest {
 
     @Test
-    void testSupersedeInstanceVariable() {
+    void supersedeInstanceVariableMockito() {
 
-        EmailSender sender =
-                mock(EmailSender.class);
+        EmailSender sender = mock(EmailSender.class);
 
-        OrderService service =
-                new TestOrderService(sender);
+        OrderService service = new TestOrderService(sender);
 
         String order = "supersede-instance-variable-123-mockito";
 

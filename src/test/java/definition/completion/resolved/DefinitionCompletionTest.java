@@ -11,7 +11,7 @@ import static original.OrderService.ORDER_PLACED;
 class DefinitionCompletionTest {
 
     @Test
-    void testDefinitionCompletionMockito() {
+    void definitionCompletionMockito() {
         EmailSender mockSender = mock(EmailSender.class);
         OrderService orderService = new OrderService();
         orderService.createEmailSender(mockSender);

@@ -10,8 +10,7 @@ class TemplateRedefinitionTest {
     @Test
     void templateRedefinitionMockito() {
 
-        OrderService service =
-                spy(new OrderService());
+        OrderService service = spy(new OrderService());
 
         doNothing()
                 .when(service)
@@ -22,7 +21,6 @@ class TemplateRedefinitionTest {
 
         service.placeOrder(order);
 
-        verify(service)
-                .sendConfirmation(order);
+        verify(service).sendConfirmation(order);
     }
 }

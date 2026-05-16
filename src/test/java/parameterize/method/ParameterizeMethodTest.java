@@ -10,7 +10,7 @@ import static original.OrderService.ORDER_PLACED;
 class ParameterizeMethodTest {
 
     @Test
-    void testParameterizeMethodMockito() {
+    void parameterizeMethodMockito() {
         EmailSender mockSender = mock(EmailSender.class);
         OrderService service = new OrderService();
 

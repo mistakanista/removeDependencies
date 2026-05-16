@@ -11,7 +11,7 @@ class ExtractOverrideCallTest {
 
 
     @Test
-    void testExtractOverrideCallMockito() {
+    void extractOverrideCallMockito() {
 
         EmailSender mockSender = mock(EmailSender.class);
         OrderService service = new OrderService(mockSender);

@@ -14,21 +14,15 @@ class TextualRedefinitionTest {
         try (MockedConstruction<EmailSender> mocked =
                      mockConstruction(EmailSender.class)) {
 
-            OrderService service =
-                    new OrderService();
+            OrderService service = new OrderService();
 
-            String order =
-                    "textual-redefinition-123";
+            String order = "textual-redefinition-123-mockitor";
 
             service.placeOrder(order);
 
-            EmailSender mockSender =
-                    mocked.constructed().getFirst();
+            EmailSender mockSender = mocked.constructed().getFirst();
 
-            verify(mockSender)
-                    .send(
-                            ORDER_PLACED + order
-                    );
+            verify(mockSender).send(ORDER_PLACED + order);
         }
     }
 }
