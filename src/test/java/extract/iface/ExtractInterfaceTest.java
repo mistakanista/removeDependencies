@@ -9,7 +9,7 @@ import static original.OrderService.ORDER_PLACED;
 
 class ExtractInterfaceTest {
     @Test
-    void testExtractInterface() {
+    void extractInterface() {
         FakeEmailSender fakeSender = new FakeEmailSender();
         OrderService service = new OrderService(fakeSender);
 

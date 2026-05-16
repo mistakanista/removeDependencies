@@ -11,7 +11,7 @@ class PullupFeatureTest {
 
 
     @Test
-    void testPullupFeature() {
+    void pullupFeature() {
         TestOrderService service = new TestOrderService();
 
         String order = "pullup-feature-123";

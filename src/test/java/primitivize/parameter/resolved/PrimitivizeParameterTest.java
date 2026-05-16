@@ -10,7 +10,7 @@ class PrimitivizeParameterTest {
     private String lastMessage;
 
     @Test
-    void testSendConfirmation() {
+    void primitivizeParameter() {
         OrderService service = new OrderService() {
             @Override
             protected void sendConfirmation(String orderId, String email) {

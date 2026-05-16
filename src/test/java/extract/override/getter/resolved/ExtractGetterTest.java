@@ -9,7 +9,7 @@ import static original.OrderService.ORDER_PLACED;
 class ExtractGetterTest {
 
     @Test
-    void testExtractOverrideGetter() {
+    void extractOverrideGetter() {
         OrderService service = new TestOrderService();
 
         String order = "override-getter-123";

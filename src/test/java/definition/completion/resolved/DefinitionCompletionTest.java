@@ -10,7 +10,7 @@ import static original.OrderService.ORDER_PLACED;
 class DefinitionCompletionTest {
 
     @Test
-    void testDefinitionCompletion() {
+    void definitionCompletion() {
         OrderService orderService = new TestOrderService();
         String testOrder = "definition-123";
         String placedOrder = orderService.placeOrder(testOrder);

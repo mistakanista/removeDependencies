@@ -29,7 +29,7 @@ class IntroduceStaticSetterTest {
     }
 
     @Test
-    void testPlaceOrderSendsEmail() {
+    void introduceStaticSetter() {
         OrderService service = new OrderService();
 
         String order = "introduce-static-setter-123";

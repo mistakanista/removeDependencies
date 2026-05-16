@@ -10,7 +10,7 @@ class LinkSubstitutionTest {
     private String lastMessage;
 
     @Test
-    void testLinkSubstitution() {
+    void linkSubstitution() {
         OrderService service = new OrderService();
 
         // Link Substitution

@@ -9,7 +9,7 @@ import static original.OrderService.ORDER_PLACED;
 class EncapsulateGlobalReferenceTest {
 
     @Test
-    void testEncapsulateGlobalReferences() {
+    void encapsulateGlobalReferences() {
         TestOrderService service = new TestOrderService();
 
         String testOrder = "encapsulate-global-reference-123";

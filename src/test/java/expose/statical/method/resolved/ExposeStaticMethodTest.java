@@ -11,7 +11,7 @@ import static original.OrderService.ORDER_PLACED;
 class ExposeStaticMethodTest {
 
     @Test
-    void testExposeStaticMethod() {
+    void exposeStaticMethod() {
         FakeEmailSender fakeSender = new FakeEmailSender();
 
         //redirect static method to fake sender

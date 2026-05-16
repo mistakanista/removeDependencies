@@ -8,7 +8,7 @@ import static original.OrderService.ORDER_PLACED;
 class TextualRedefinitionTest {
 
     @Test
-    void testTextualRedefinition() {
+    void textualRedefinition() {
         OrderService service = new OrderService();
 
         String order = "textual-redifinition-123";

@@ -8,7 +8,7 @@ import static original.OrderService.ORDER_PLACED;
 class IntroduceInstanceDelegatorTest {
 
     @Test
-    void testPlaceOrderSendsEmail() {
+    void instanceDelegator() {
         TestOrderService service = new TestOrderService();
 
         String order = "introduce-instance-delegator-123";

@@ -8,7 +8,7 @@ import static original.OrderService.ORDER_PLACED;
 class ReplaceGlobalReferenceTest {
 
     @Test
-    void testReplaceGlobalReference() {
+    void replaceGlobalReference() {
         TestOrderService service = new TestOrderService();
 
         String order = "replace-global-reference-123";

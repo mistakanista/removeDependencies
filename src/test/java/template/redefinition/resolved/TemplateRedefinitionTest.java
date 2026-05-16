@@ -8,7 +8,7 @@ import static original.OrderService.ORDER_PLACED;
 class TemplateRedefinitionTest {
 
     @Test
-    void testSupersedeInstanceVariable() {
+    void templateRedefinition() {
         TestOrderService service = new TestOrderService();
 
         String order = "template-redifinition-123";

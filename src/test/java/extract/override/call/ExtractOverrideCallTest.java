@@ -8,7 +8,7 @@ import static original.OrderService.ORDER_PLACED;
 class ExtractOverrideCallTest {
 
     @Test
-    void testExtractOverrideCall() {
+    void extractOverrideCall() {
         TestOrderService service = new TestOrderService();
 
         String order = "override-call-123";

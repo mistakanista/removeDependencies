@@ -8,7 +8,7 @@ import static original.OrderService.ORDER_PLACED;
 class SupersedeInstanceVariableTest {
 
     @Test
-    void testSupersedeInstanceVariable() {
+    void supersedeInstanceVariable() {
         TestOrderService service = new TestOrderService();
 
         String order = "supersede-instance-variable-123";

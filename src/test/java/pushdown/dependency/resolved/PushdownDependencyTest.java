@@ -11,7 +11,7 @@ import static pushdown.dependency.original.InStoreOrderService.IN_STORE;
 class PushdownDependencyTest {
 
     @Test
-    void testInStoreOrderDoesNotSendEmail() {
+    void pushDownDependency() {
         OrderService service = new InStoreOrderService();
         String order = "pushdown-dependency-123";
         String placedOrder = service.placeOrder(order);

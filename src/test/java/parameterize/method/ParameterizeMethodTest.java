@@ -12,7 +12,7 @@ class ParameterizeMethodTest {
     private String lastMessage;
 
     @Test
-    void testParameterizeMethod() {
+    void parameterizeMethod() {
         EmailSender testSender = new EmailSender() {
             @Override
             public void send(String message) {

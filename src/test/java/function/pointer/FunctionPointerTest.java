@@ -9,7 +9,7 @@ class FunctionPointerTest {
     private String lastMessage;
 
     @Test
-    void testFunctionPointer() {
+    void functionPointer() {
         OrderService service = new OrderService();
 
         service.setSendEmail(message -> lastMessage = message);

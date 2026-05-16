@@ -8,7 +8,7 @@ import static original.OrderService.ORDER_PLACED;
 class ExtractImplementerTest {
 
     @Test
-    void testExtractImplementer() {
+    void extractImplementer() {
         FakeMailSender fakeSender = new FakeMailSender();
         OrderService service = new OrderService(fakeSender);
 

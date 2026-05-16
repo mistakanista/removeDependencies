@@ -6,8 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static original.OrderService.ORDER_PLACED;
 
 class SubclassOverrideMethodTest {
+
     @Test
-    void testSubclassOverrideMethod() {
+    void subclassOverrideMethod() {
         TestOrderService service = new TestOrderService();
 
         String order = "subclass-override-method-123";

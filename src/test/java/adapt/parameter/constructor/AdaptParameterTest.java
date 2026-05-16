@@ -17,7 +17,7 @@ class AdaptParameterTest {
     }
 
     @Test
-    void testAdaptParameterConstructorParameter() {
+    void adaptParameterConstructorParameter() {
         TestSender testSender = new TestSender();
         OrderService service = new OrderService(testSender);
 

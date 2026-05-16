@@ -9,7 +9,7 @@ import static original.OrderService.ORDER_PLACED;
 class ExtractFactoryMethodTest {
 
     @Test
-    void testFactoryMethod() {
+    void factoryMethod() {
         TestOrderService service = new TestOrderService();
 
         String order = "factory-123";

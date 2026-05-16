@@ -11,7 +11,7 @@ class ParameterizeConstructorTest {
     private String lastMessage;
 
     @Test
-    void testParameterizeConstructor() {
+    void parameterizeConstructor() {
         EmailSender testSender = new EmailSender() {
             @Override
             public void send(String message) {

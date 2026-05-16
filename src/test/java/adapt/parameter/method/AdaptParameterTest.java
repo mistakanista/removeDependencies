@@ -16,7 +16,7 @@ class AdaptParameterTest {
     }
 
     @Test
-    void testAdaptParameterMethodParameter() {
+    void adaptParameterMethodParameter() {
 
         TestSender testSender = new TestSender();
 

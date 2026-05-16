@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BreakoutMethodObjectTest {
 
     @Test
-    void testBreakoutMethodObject() {
+    void breakoutMethodObject() {
+
         String order = "breakout-methodobject-123";
-        TestPlaceOrderMethod method =
-                new TestPlaceOrderMethod(order, "test@example.com");
+        TestPlaceOrderMethod method = new TestPlaceOrderMethod(order, "test@example.com");
 
         method.execute();
 
