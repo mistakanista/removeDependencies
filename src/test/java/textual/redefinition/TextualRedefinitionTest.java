@@ -1,22 +1,34 @@
 package textual.redefinition;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedConstruction;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 import static original.OrderService.ORDER_PLACED;
 
 class TextualRedefinitionTest {
 
     @Test
-    void testTextualRedefinition() {
-        OrderService service = new OrderService();
+    void testTextualRedefinitionMockito() {
 
-        String order = "textual-redifinition-123";
-        service.placeOrder(order);
+        try (MockedConstruction<EmailSender> mocked =
+                     mockConstruction(EmailSender.class)) {
 
-        assertEquals(
-                ORDER_PLACED + order,
-                EmailSender.lastMessage
-        );
+            OrderService service =
+                    new OrderService();
+
+            String order =
+                    "textual-redefinition-123";
+
+            service.placeOrder(order);
+
+            EmailSender mockSender =
+                    mocked.constructed().getFirst();
+
+            verify(mockSender)
+                    .send(
+                            ORDER_PLACED + order
+                    );
+        }
     }
 }

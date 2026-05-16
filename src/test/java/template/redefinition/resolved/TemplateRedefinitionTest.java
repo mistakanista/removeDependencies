@@ -2,21 +2,27 @@ package template.redefinition.resolved;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static original.OrderService.ORDER_PLACED;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.*;
 
 class TemplateRedefinitionTest {
 
     @Test
-    void testSupersedeInstanceVariable() {
-        TestOrderService service = new TestOrderService();
+    void templateRedefinitionMockito() {
 
-        String order = "template-redifinition-123";
+        OrderService service =
+                spy(new OrderService());
+
+        doNothing()
+                .when(service)
+                .sendConfirmation(
+                        anyString()
+                );
+        String order = "template-redifinition-123-mockito";
+
         service.placeOrder(order);
 
-        assertEquals(
-                ORDER_PLACED + order,
-                service.confirmationMessage
-        );
+        verify(service)
+                .sendConfirmation(order);
     }
 }

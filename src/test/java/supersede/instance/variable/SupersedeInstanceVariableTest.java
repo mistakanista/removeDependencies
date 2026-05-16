@@ -1,22 +1,26 @@
 package supersede.instance.variable;
 
 import org.junit.jupiter.api.Test;
+import original.EmailSender;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 import static original.OrderService.ORDER_PLACED;
 
 class SupersedeInstanceVariableTest {
 
     @Test
     void testSupersedeInstanceVariable() {
-        TestOrderService service = new TestOrderService();
 
-        String order = "supersede-instance-variable-123";
+        EmailSender sender =
+                mock(EmailSender.class);
+
+        OrderService service =
+                new TestOrderService(sender);
+
+        String order = "supersede-instance-variable-123-mockito";
+
         service.placeOrder(order);
 
-        assertEquals(
-                ORDER_PLACED + order,
-                service.lastMessage
-        );
+        verify(sender).send(ORDER_PLACED + order);
     }
 }
